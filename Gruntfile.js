@@ -5,9 +5,9 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 		concat: {
 			dist: {
-				src: ['src/assets/js/*.js'],
+				src: ['src/assets/js/**/*.js'],
 				dest: 'build/assets/js/<%= pkg.name %>.js'
-		}
+			}
 		},
 		uglify: {
 			options: {
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'build/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'build/assets/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
